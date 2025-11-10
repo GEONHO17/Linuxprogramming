@@ -1,15 +1,20 @@
-#ifndef _MYLIB_H // 전처리문, 중복 방지
-#define _MYLIB_H
-#include <iostream>    //입출력을 제공하는 헤더파일 포함 
-using namespace std; // 네임스페이스에 정의된 std생략 
+#include "mylib.hpp"    //헤더파일 선언 
 
-class Complex { // 클래스 정의
-    int real;  // 실수부
-    int img;   // 허수부
-public: // 접근 지정자
-    Complex(int a = 0, int b = 0);     //생성자   
-    void show();                        //복소수 출력 함수 
-    friend Complex& operator++ (Complex& a);        //전위 ++연산자 함수 선언 
-    friend Complex operator--(Complex& a,int x);     //후위 --연산자 함수 선언 
-};  //클래스 끝 
-#endif //_MYLIB_H
+Complex::Complex(int a,int b){    //생성자 정의 
+    real = a; img = b;                 //입력받은 값으로 초기화 
+    cout << "복소수 "<<real<<"+"<<img<<"j생성"<<endl;   //메시지 출력 
+}                                 //생성자 끝 
+void Complex::show(){             //복소수 출력 함수 
+    cout << real << "+" <<img <<"j"<<endl;    //메시지 출력  
+}                                 //함수 끝 
+Complex& operator++ (Complex& a){    //전위 ++연산자 함수 정의 
+    a.real ++;                          //1증가
+    a.img ++;                           //1증가
+    return a;                           //증가된 값 반환 
+}                                       //함수 끝 
+Complex operator--(Complex& a,int x){ //후위 --연산자 함수 정의 
+    Complex tmp = a;                    //변경 전 객체 저장 
+    a.real--;                           //1감소 
+    a.img--;                            //1감소 
+    return tmp;                         //변경 전 값 반환 
+}                                       //함수 끝 
