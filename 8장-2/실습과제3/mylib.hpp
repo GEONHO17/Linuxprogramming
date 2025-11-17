@@ -6,28 +6,28 @@ class Shape{        //클래스 생성
     int x;          //멤버 변수
     int y;          //멤버 변수
 public:             //접근 지정자
-    void setShape(int x=0,int y=0);  //멤버 변수 설정함수 
+    Shape(int x=0,int y=0);  //멤버 변수 설정함수 
     void show();            //출력 함수 
     ~Shape();
 };                          //클래스 끝     
 class Circle :public Shape{ //클래스 생성
     int rad;                //멤버 변수
 public:
-    void setCircle(int x,int y, int rad);    //멤버 변수 설정함수
+    Circle(int x,int y, int rad);    //멤버 변수 설정함수
     ~Circle();
     void show();            //출력함수
 };                          //클래스 끝
 class Rect :public Shape{   //클래스 생성
     int width, height;      //멤버 변수 
 public:                     //접근지정사
-    void setRect(int x,int y,int width,int height);    //멤버 변수 설정함수
+    Rect(int x,int y,int width,int height);    //멤버 변수 설정함수
     void show();            //출력 함수 
     ~Rect();
 };                          //함수 끝 
 class Triangle :public Shape{   //클래스 생성
     int width,height;           //멤버 변수
 public:                         //접근 지정자
-    void setTriangle(int x,int y,int width, int height);   //멤버변수 설정함수
+    Triangle(int x,int y,int width, int height);   //멤버변수 설정함수
     void show();                //출력 함수
     ~Triangle();
 };                              //클래스 끝 
